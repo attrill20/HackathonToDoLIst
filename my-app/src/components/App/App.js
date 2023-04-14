@@ -3,36 +3,19 @@ import './App.css';
 import { useState } from 'react';
 import Input from '../Input';
 import List from '../List';
-import Button from '../Button';
-
-
 
 function App() {
 
-const [text, setText] = useState("");
-
 const [list, setList] = useState([])
 
-function handleChange(event) { // this handles the text input
-  let inputText = event.target.value
-  setText(inputText);
-  console.log(`Input text is: `, inputText);
+function addToList(text){ // this function adds new object to our array
 
-}
+  console.log("Add function:", text);
 
-
-function addToList(text){ // this 
-
-setList([{text}, ...list]);
-// console.log(text)
-// console.log({text})
-console.log(`List contains: `, {list}) // this may contain old state re async
-// console.log({list})
-
-// make a new list and console log that to see if it's been updated
-const newList = [{text}, ...list]
-console.log(`After async- list contains: `, {newList}) 
-
+  setList([{text}, ...list]);
+  console.log(`List contains: `, {list}) // this may contain old state re async
+  const newList = [{text}, ...list]
+  console.log(`After async- list contains: `, {newList}) 
 }
 
   return (
@@ -40,11 +23,9 @@ console.log(`After async- list contains: `, {newList})
       <header className="App-header">
     
         <p>App Test Bryony</p>
-        <Input onChange = {handleChange}/>
-        <Button addToList = {addToList} text = {text}/>
-        <List list = {list}/>
+        <Input addToList = {addToList}/>
+        {/* <List newList = {text} /> */}
         
-      
       </header>
     </div>
   );
@@ -63,7 +44,7 @@ export default App;
 // ✅
 // when button is clicked run function addNewList (newListItem)
 // button onClick = {() => addNewList({text})
-// that takes the text and creates a new valiable  ✅
+// that takes the text and creates a new variable  ✅
 
 // inside app.js present our list
 // inside list index file use list.map
