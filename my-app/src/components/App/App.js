@@ -21,8 +21,6 @@ function handleChange(event) { // this handles the text input
 }
 
 
-
-
 function addToList(text){ // this 
 
 setList([{text}, ...list]);
