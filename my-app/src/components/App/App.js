@@ -18,13 +18,21 @@ function addToList(text){ // this function adds new object to our array
   console.log(`After async- list contains: `, {newList}) 
 }
 
+const ListItems = list.map((listItem) =>
+<container>
+<li key={listItem.id}>{listItem.text}</li>
+<button>🗑️</button>
+</container>
+
+);
+
   return (
     <div className="App">
       <header className="App-header">
     
-        <p>App Test Bryony</p>
+        <p>Shopping List</p>
         <Input addToList = {addToList}/>
-        {/* <List newList = {text} /> */}
+        <ul>{ListItems}</ul>
         
       </header>
     </div>

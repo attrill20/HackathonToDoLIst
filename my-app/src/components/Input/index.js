@@ -7,8 +7,8 @@ function Input(props) {
     console.log(text);
     return(
         <div>
-        <input type = "text" onChange={(event) => setText(event.target.value)}></input>
-        <button onClick ={() => {props.addToList(text)}}>Add to list</button> 
+        <input type = "text" value = {text} onChange={(event) => setText(event.target.value)}></input>
+        <button onClick ={() => {props.addToList(text); setText('')}}>Add to list</button> 
         </div>
     );
 }

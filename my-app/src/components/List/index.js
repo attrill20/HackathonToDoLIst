@@ -1,12 +1,11 @@
 import React from 'react';
 
+
 function List (props) {
     // console.log(props);
-    
+    // console.log(props.listItems)
     return(
-    
-        <li>{props.text}</li>
-
+        <p></p>
     );
 
 }
