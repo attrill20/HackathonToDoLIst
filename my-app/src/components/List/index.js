@@ -4,7 +4,7 @@ function List (props) {
     console.log(props);
     
     return(
-        <h1>List Test</h1>
+        <li>{props.text}</li>
 
     );
 
