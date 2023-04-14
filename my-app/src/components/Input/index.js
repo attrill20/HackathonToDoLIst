@@ -1,11 +1,11 @@
 import React from 'react';
 
 function Input(props) {
-    console.log(props);
+    // console.log(props);
     
     return(
-
-        <input type = "text"></input>
+//do the mapping here
+        <input type = "text" onChange={props.onChange}></input>
         
 
     );

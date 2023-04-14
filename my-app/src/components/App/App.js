@@ -11,15 +11,30 @@ function App() {
 
 const [text, setText] = useState("");
 
-function handleChange(event) {
-  setText(event.target.value);
-  console.log(event.target.value);
-  console.log (text);
+const [list, setList] = useState([])
+
+function handleChange(event) { // this handles the text input
+  let inputText = event.target.value
+  setText(inputText);
+  console.log(`Input text is: `, inputText);
 
 }
 
-function addToList(){
-  <List text = {text}/>  
+
+
+
+function addToList(text){ // this 
+
+setList([{text}, ...list]);
+// console.log(text)
+// console.log({text})
+console.log(`List contains: `, {list}) // this may contain old state re async
+// console.log({list})
+
+// make a new list and console log that to see if it's been updated
+const newList = [{text}, ...list]
+console.log(`After async- list contains: `, {newList}) 
+
 }
 
   return (
@@ -27,9 +42,9 @@ function addToList(){
       <header className="App-header">
     
         <p>App Test Bryony</p>
-        <Input onChange = {handleChange} name = "changeName"/>
-        <Button buttonClick = {addToList}/>
-        <List text = {text}/>
+        <Input onChange = {handleChange}/>
+        <Button addToList = {addToList} text = {text}/>
+        <List list = {list}/>
         
       
       </header>
@@ -41,14 +56,17 @@ export default App;
 
 
 // useState to create an empty array of list items
-// const [list, setList] = useState([]);
+// const [list, setList] = useState([]);✅
+
 // create a function that takes our previous items and adds one (...)
 // function addNewList (listItem) {
 // setList([...list, listItem])
 // }
+// ✅
 // when button is clicked run function addNewList (newListItem)
 // button onClick = {() => addNewList({text})
-// that takes the text and creates a new valiable 
+// that takes the text and creates a new valiable  ✅
+
 // inside app.js present our list
 // inside list index file use list.map
 
